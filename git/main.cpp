@@ -3,26 +3,36 @@
 using std::string;
 
 //function prototypes
-int configgitusernamestring(char*);
+string configgitusernamestring(char*);
 
 int main () {
     char username[30];
-    char email[30];
+    string email = "";
     std::cout << "Git username: ";
     std::cin >> username;
     std::cout << "Git email: ";
     std::cin >> email;
+    string gitusernamestring = "";
+    string gituseremailstring = "";
     if(system("git version")) {
         system("gitinstall");
-        configgitusernamestring(username);
-        system("git config --global user.name \"" +  + "\"");
-        system("git config --global user.email ");
+        gitusernamestring = configgitusernamestring(username);
+        system(gitusernamestring.c_str());
+        gituseremailstring = "git config --global user.email " + email;
+        system(gituseremailstring.c_str());
         system("git init");
-        system("git clone https://github.com/jrodr544/videoApp.git");
-        system("cd videoApp");
     }
+    else 
+        std::cout << "Git already installed. Congratulations!";
+    std::system("PAUSE");
+    return 0;
 }
 
-int configgitusernamestring(char* aname) {
-    
+string configgitusernamestring(char* aname) {
+    string return_val = "git config --global user.name \"";
+    for(int i = 0; i != '\0' || i < 30; i++) {
+        return_val += aname[i];
+    }
+    return_val += "\"";
+    return return_val;
 }
