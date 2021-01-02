@@ -10,8 +10,12 @@ int main () {
     string email = "";
     std::cout << "Git username: ";
     std::cin >> username;
+    std::cin.clear();
+    std::cin.ignore('\n', 128);
     std::cout << "Git email: ";
     std::cin >> email;
+    std::cin.clear();
+    std::cin.ignore('\n', 128);
     string gitusernamestring = "";
     string gituseremailstring = "";
     if(system("git version")) {
