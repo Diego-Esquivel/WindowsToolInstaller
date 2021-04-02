@@ -1,0 +1,1 @@
+curl https://github.com/Diego-Esquivel/WindowsToolInstaller/archive/refs/heads/main.zip --output windtoolinstaller.zip
