@@ -16,5 +16,10 @@ Contains the following files:
 * nodejsinstall.bat - Where most system calls happen. Will research at another time
 	if this is better than having it all as system call in c++
 
+**Research currently points to systemcall in c++ being quicker to the .bat file.
+	The reasoning behind this idea is the c++ compilers assembles a binary file 
+	once where thru definition of a scripting language (ex. .bat, .js, etc.) 
+	the .bat file needs interpretation.
+
 Installs the following programs:
 * nodejs-installer as nodejsbashinstall.msi
